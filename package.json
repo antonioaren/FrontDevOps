@@ -1,0 +1,26 @@
+{
+  "name": "frontdevops",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fausrguez/FrontDevOps.git"
+  },
+  "keywords": [
+    "Front",
+    "DevOps"
+  ],
+  "author": "fausrguez, nacheting",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fausrguez/FrontDevOps/issues"
+  },
+  "homepage": "https://github.com/fausrguez/FrontDevOps#readme",
+  "dependencies": {
+    "nodemon": "^1.17.3"
+  }
+}
