@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var multiparty = require('multiparty'), http = require('http'), util = require('util');
 
 http.createServer(function(req, res) {
@@ -12,3 +13,8 @@ http.createServer(function(req, res) {
     return;
   }
 }).listen(8080);
+=======
+function exampleInputFile(params) {
+    
+}
+>>>>>>> ff468fec80dcff9544c4d2c2b5e1832ae4153549
