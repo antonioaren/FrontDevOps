@@ -1,20 +1,31 @@
-<<<<<<< HEAD
-var multiparty = require('multiparty'), http = require('http'), util = require('util');
+const app = require('express')();
+const bodyParser = require('body-parser');
 
-http.createServer(function(req, res) {
-  if (req.url === '/users' && req.method === 'POST') {
-    console.log("1");
-    var form = new multiparty.Form();
-    form.parse(req, function(err, fields, files) {
-      res.writeHead(200, {'content-type': 'text/plain'});
-      res.write('received upload:\n\n');
-      res.end(util.inspect({fields: fields, files: files}));
+app.use(bodyParser.urlencoded({
+  extended: false
+}))
+app.use(bodyParser.json());
+
+app.route('/upload').post(function(req, res, next) {
+  console.log('AAA');
+  /*
+  var fstream;
+  req.pipe(req.busboy);
+  req.busboy.on('file', function(fieldname, file, filename) {
+    console.log("Uploading: " + filename);
+
+    //Path where image will be uploaded
+    fstream = fs.createWriteStream(__dirname + '/img/' + filename);
+    file.pipe(fstream);
+    fstream.on('close', function() {
+      console.log("Upload Finished of " + filename);
+      res.redirect('back'); //where to go next
     });
-    return;
-  }
-}).listen(8080);
-=======
-function exampleInputFile(params) {
-    
-}
->>>>>>> ff468fec80dcff9544c4d2c2b5e1832ae4153549
+  });
+  */
+});
+
+
+app.listen(8080, (err) => {
+  console.log('Servidor listo en el puerto');
+});
