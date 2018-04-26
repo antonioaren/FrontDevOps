@@ -1,35 +1,35 @@
 const express = require('express');
-// const bodyParser = require('body-parser');
+const fileUpload = require('express-fileupload');
+
+const _ = require('lodash')
 const app = express();
-const multer = require('multer')
-const busboy = require('connect-busboy');
-// const busboy = require('busboy');
 
-
-// app.use(bodyParser.urlencoded({
-//     extended: false
-// }))
-
-// app.use(bodyParser.json());
+app.use(fileUpload())
 
 app.route('/').get((req,res,next)=>{
     console.log("entre en el get");
     res.json("Se ha hecho una petición get")
 });
 
-app.route('/upload').post(function(req, res, next) {
-    console.log("entre en el post");
-    
+app.post('/upload', function (req, res){
+    if(!req.files) return res.status(400).send('No files were uploaded.')
+    let files = [];
+    req.files.txtFile.forEach(file =>{
+        var result = ""
+        let arr = _.values(file.data)
+       arr.forEach(str => {
+           result += hex2bin(str)
+       })
+        files.push(result);
+    })
+    console.log(files.length);
+    res.status(200).send("OK")
+   });
 
-    //Path where image will be uploaded
-    // fstream = fs.createWriteStream(__dirname + '/img/' + filename);
-    // file.pipe(fstream);
-    // fstream.on('close', function() {
-    //   console.log("Upload Finished of " + filename);
-    //   res.redirect('back'); //where to go next
-    // });
-  
-});
+   function hex2bin(hex){    
+           return ("00000000" + (parseInt(hex, 16)).toString(2)).substr(-8);
+
+    }
 
 app.listen(8080, (err) => {
  console.log('Servidor listo en el puerto 8080');
