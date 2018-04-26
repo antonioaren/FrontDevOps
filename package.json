@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/fausrguez/FrontDevOps#readme",
   "dependencies": {
-    "nodemon": "^1.17.3"
+    "axios": "^0.18.0",
+    "blueimp-file-upload-node": "^2.1.0",
+    "nodemon": "^1.17.3",
+    "require": "^2.4.20"
   }
 }
