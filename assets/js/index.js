@@ -1,14 +1,20 @@
-const axios = require('axios');
+// const axios = require('axios');
 
-start()
+// start()
 
-function start(){
-  axios.get('').then(response => {
-    let data = response.data;
-    drawResults(response.data);
-  })
-}
+// function start(){
+//   axios.get('').then(response => {
+//     let data = response.data;
+//     drawResults(response.data);
+//   })
+// }
 
-function drawResults(){
-  
-}
+// function drawResults(data){
+
+//     var html ='';
+//     data.forEach(file => {
+
+//     })
+    
+    
+// }
