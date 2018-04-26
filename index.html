@@ -16,7 +16,7 @@
     <form action='localhost:8080/users' enctype="multipart/form-data" method="POST">
         <div class="form-group">
             <label for="txtFile">File input</label>
-            <input type="file" class="form-control-file" id="txtFile" aria-describedby="fileHelp">
+            <input type="file" class="form-control-file" id="txtFile" aria-describedby="fileHelp" name="txtFile" multiple="multiple"/>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
