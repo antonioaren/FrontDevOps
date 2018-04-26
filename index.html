@@ -13,10 +13,10 @@
 </head>
 
 <body>
-    <form>
+    <form action='localhost:8080/users' enctype="multipart/form-data" method="POST">
         <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+            <label for="txtFile">File input</label>
+            <input type="file" class="form-control-file" id="txtFile" aria-describedby="fileHelp">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
